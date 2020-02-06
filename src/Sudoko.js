@@ -76,8 +76,8 @@ export default class Sudoko extends Component{
         }
         return true;
     }
-    changeBoard(squareBoard){
-        let sol=squareBoard;
+    changeBoard(){
+        let sol=this.state.board;
         this.setState({
             board : sol
         });
@@ -110,7 +110,7 @@ export default class Sudoko extends Component{
            return (
             <div> 
                 <SudokuBoard board={this.state.board}/>
-                <button onClick={()=>this.changeBoard(this.state.board)}>Solve me</button>
+                <button onClick={this.changeBoard}>Solve me</button>
             </div>
         );
     }
